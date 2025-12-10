@@ -1,0 +1,22 @@
+This project builds a machine learning pipeline that predicts how many points an NBA player will score in their next game, using real-time data collected from the balldontlie.io API (v2).
+
+A key design decision in this project:
+
+We intentionally use ONLY 3 months of recent games
+because performance has strong recency effects —
+lineup changes, injuries, usage role, coaching adjustments, and team pace shift quickly.
+
+Training on an entire season actually hurts accuracy,
+because old games no longer reflect the player’s current situation.
+
+Therefore:
+
+Data window: 2023-11-01 → 2024-02-01
+
+Teams: All 30 NBA teams
+
+Goal: Maximize predictive accuracy with timely, up-to-date information
+
+Model: XGBoost Regression
+
+Target: next_pts (points in the next game)
